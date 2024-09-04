@@ -69,9 +69,9 @@ make better use of the WebDAV protocol. Whether it really does, depends on the
 implementation. But if a free WebDAV enabled application is available, you
 might try it first.
 
-davfs2 can't (always) replace lodal disk space. Due to the nature of WebDAV
+davfs2 can't (always) replace local disk space. Due to the nature of WebDAV
 davfs2 can't directly redirect reading and writing to the WebDAV server. davfs2
-always needs local copies of all open files. So if you have not enough sidk
+always needs local copies of all open files. So if you have not enough disk
 space to hold these local copies, davfs2 will not help.
 
 
@@ -103,7 +103,7 @@ davfs2 comes with three manuals: mount.davfs, umount.davfs and davfs2.conf.
 When a normal user mounts a davfs2 file system for the first time, there
 is not yet a user configuration file and a secrets file. So you will be asked
 for the credentials. mount.davfs will create a hidden directory .davfs2 in
-the users home directory, that holds configuration files, the cache and
+the user's home directory, that holds configuration files, the cache and
 certificates. You will want to edit this files afterwards.
 
 If you update from an older version, these files already exist and davfs2
@@ -142,7 +142,7 @@ are three ways to do this:
 
 - You may store a top-level CA-certificate in the certs directory and set
   option trust_ca_cert in the davfs2.conf directory. This CA-certificate will
-  be used instead of the CA-certificates provided by your system. he server's
+  be used instead of the CA-certificates provided by your system. The server's
   certificate must be valid and host-name of the server must match the
   subject-alt-name or the common name of the certificate.
   This is useful when the service provider uses a private CA or the server
@@ -188,7 +188,7 @@ To avoid inconsistencies, davfs2 will do a conditional GET whenever a file is
 opened (it will ask the server if there is a newer version, and download only
 if there is).
 
-Many application use temporary files that will be deleted just after they have
+Many applications use temporary files that will be deleted just after they have
 been closed. So whenever a file is newly created or changed, davfs2 will wait
 until it is closed and then wait another short period (configurable, default
 is 10 seconds) before it will upload the changed version to server. This saves
@@ -239,14 +239,14 @@ When sending a bug report, please include
 
 - If the server does not support RFC 4331 (most servers don't), davfs2 cannot
   calculate the free disk space on the server. But some applications
-  (e.g. nautilus) insist on this. So davfs can't help but lie. I tried to
+  (e.g. nautilus) insist on this. So davfs can't help but lies. I tried to
   make the numbers look funny, so you will notice they are faked.
 
 
 8 CONTACT
 =========
 
-davfs2 is an Free Software project hostet at
+davfs2 is an Free Software project hosted at
 http://savannah.nongnu.org/projects/davfs2 or
 https://savannah.nongnu.org/projects/davfs2
 
